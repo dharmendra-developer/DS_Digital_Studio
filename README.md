@@ -392,7 +392,7 @@ DS-Online-Digital-Studio/
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/DS-Online-Digital-Studio.git
+git clone https://github.com/dharmendra-developer/DS-Online-Digital-Studio.git
 ```
 
 Open the project:
