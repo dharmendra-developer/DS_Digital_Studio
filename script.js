@@ -7,6 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const noticeTrack = document.querySelector('.notice-track');
   const openStatus = document.getElementById('openStatus');
   const todayDateItems = document.querySelectorAll('.today-date');
+  const calculatorInputs = ['printPages', 'scanPages', 'copyPages'].map((id) => document.getElementById(id));
+  const calculatorTotal = document.getElementById('calculatorTotal');
+  const adminNotice = document.getElementById('adminNotice');
+  const adminService = document.getElementById('adminService');
+  const adminPrice = document.getElementById('adminPrice');
+  const saveAdminChanges = document.getElementById('saveAdminChanges');
+  const resetAdminChanges = document.getElementById('resetAdminChanges');
+  const adminMessage = document.getElementById('adminMessage');
 
   if (!hero) {
     return;
@@ -41,6 +49,62 @@ document.addEventListener('DOMContentLoaded', () => {
   const fadeItems = document.querySelectorAll('.fade-in');
   const counters = document.querySelectorAll('.counter-number');
   const contactForm = document.getElementById('contactForm');
+  const servicesContainer = document.querySelector('.services-sections');
+
+  if (servicesContainer && serviceCards.length) {
+    const categories = [
+      {
+        name: 'Student Services',
+        icon: '&#127891;',
+        services: ['APAAR ID / ABC ID', 'Scholarship Apply', 'Competition Exam Forms', 'Entrance Exam Form', 'Resume / CV Making', 'Project Report Making', 'Job Application Services', 'College Admission Form', 'University Exam Form', 'Admit Card Download', 'Result & Marksheet Download', 'Scholarship Renewal & Correction', 'Assignment Typing', 'Online Counselling Registration', 'Internship & Apprenticeship Form']
+      },
+      {
+        name: 'Government Documents',
+        icon: '&#128220;',
+        services: ['Aadhar Card Download', 'PAN Card Service', 'Voter ID Card', 'Birth Certificate', 'Residence Certificate', 'Income Certificate', 'Caste Certificate', 'DigiLocker Support', 'Ayushman Card', 'e-Shram Card', 'Driving Licence Services', 'Passport Appointment']
+      },
+      {
+        name: 'Travel & Payments',
+        icon: '&#128646;',
+        services: ['Railway Ticket Booking', 'Flight Ticket Booking', 'Mobile Recharge', 'Electricity Bill Payment']
+      },
+      {
+        name: 'Printing & Design',
+        icon: '&#128424;',
+        services: ['PVC Card Order', 'Online Form Printing', 'Photo & Signature Resize', 'YouTube Thumbnail Design']
+      },
+      {
+        name: 'Business & Other Work',
+        icon: '&#128187;',
+        services: ['Website Development', 'Udyam / MSME Registration', 'ITR / GST Support', 'Cyber Cafe Services', 'All Online Work']
+      }
+    ];
+    const cardsByTitle = new Map(Array.from(serviceCards, (card) => [card.querySelector('h3')?.textContent.trim(), card]));
+
+    servicesContainer.replaceChildren();
+
+    categories.forEach((category) => {
+      const categorySection = document.createElement('section');
+      const categoryTitle = document.createElement('h3');
+      const categoryGrid = document.createElement('div');
+
+      categorySection.className = 'service-category';
+      categoryTitle.className = 'service-category-title';
+      categoryTitle.innerHTML = `${category.icon} ${category.name}`;
+      categoryGrid.className = 'services-grid';
+
+      category.services.forEach((serviceName) => {
+        const card = cardsByTitle.get(serviceName);
+
+        if (card) {
+          categoryGrid.appendChild(card);
+        }
+      });
+
+      categorySection.append(categoryTitle, categoryGrid);
+      servicesContainer.appendChild(categorySection);
+    });
+  }
 
   if (todayDateItems.length) {
     const today = new Date();
@@ -89,14 +153,92 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (openStatus) {
-    const now = new Date();
-    const hour = now.getHours();
-    const isOpen = hour >= 8 && hour < 21;
+    const updateOpenStatus = () => {
+      const hour = new Date().getHours();
+      const isOpen = hour >= 8 && hour < 21;
 
-    openStatus.textContent = isOpen
-      ? 'Open Now - 8 AM to 9 PM'
-      : 'Closed Now - Opens at 8 AM';
-    openStatus.classList.toggle('is-closed', !isOpen);
+      openStatus.textContent = isOpen
+        ? 'Open Now - 8 AM to 9 PM'
+        : 'Closed Now - Opens at 8 AM';
+      openStatus.classList.toggle('is-closed', !isOpen);
+    };
+
+    updateOpenStatus();
+    window.setInterval(updateOpenStatus, 60000);
+  }
+
+  if (calculatorTotal && calculatorInputs.every(Boolean)) {
+    const updateCalculator = () => {
+      const [printPages, scanPages, copyPages] = calculatorInputs.map((input) => Math.max(0, Number(input.value) || 0));
+      const total = (printPages * 10) + (scanPages * 5) + (copyPages * 2);
+      calculatorTotal.textContent = `\u20b9${total.toLocaleString('en-IN')}`;
+    };
+
+    calculatorInputs.forEach((input) => input.addEventListener('input', updateCalculator));
+    updateCalculator();
+  }
+
+  if (adminService && saveAdminChanges && resetAdminChanges) {
+    const pricingRows = document.querySelectorAll('.pricing-table tbody tr');
+
+    pricingRows.forEach((row) => {
+      const serviceName = row.querySelector('th')?.textContent.trim();
+      if (serviceName) {
+        const option = document.createElement('option');
+        option.value = serviceName;
+        option.textContent = serviceName;
+        adminService.appendChild(option);
+      }
+    });
+
+    const savedNotice = localStorage.getItem('dsAdminNotice');
+    const savedPrices = JSON.parse(localStorage.getItem('dsAdminPrices') || '{}');
+
+    if (savedNotice && noticeTrack) {
+      noticeTrack.querySelectorAll('span').forEach((item) => {
+        item.textContent = savedNotice;
+      });
+    }
+
+    Object.entries(savedPrices).forEach(([serviceName, price]) => {
+      pricingRows.forEach((row) => {
+        if (row.querySelector('th')?.textContent.trim() === serviceName) {
+          row.querySelector('td:last-child').textContent = price;
+        }
+      });
+    });
+
+    saveAdminChanges.addEventListener('click', () => {
+      const serviceName = adminService.value;
+      const price = adminPrice.value.trim();
+      const notice = adminNotice.value.trim();
+      const prices = JSON.parse(localStorage.getItem('dsAdminPrices') || '{}');
+
+      if (serviceName && price) {
+        prices[serviceName] = price;
+        pricingRows.forEach((row) => {
+          if (row.querySelector('th')?.textContent.trim() === serviceName) {
+            row.querySelector('td:last-child').textContent = price;
+          }
+        });
+      }
+
+      if (notice && noticeTrack) {
+        localStorage.setItem('dsAdminNotice', notice);
+        noticeTrack.querySelectorAll('span').forEach((item) => {
+          item.textContent = notice;
+        });
+      }
+
+      localStorage.setItem('dsAdminPrices', JSON.stringify(prices));
+      adminMessage.textContent = 'Changes saved on this browser.';
+    });
+
+    resetAdminChanges.addEventListener('click', () => {
+      localStorage.removeItem('dsAdminNotice');
+      localStorage.removeItem('dsAdminPrices');
+      window.location.reload();
+    });
   }
 
   if (subtitle) {

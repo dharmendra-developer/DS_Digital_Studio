@@ -60,18 +60,20 @@
 <body>
   <header class="site-header">
     <a href="#hero" class="brand-mark" aria-label="DS Online Digital Studio home">
-      <span>DS</span>
+      <span class="brand-logo"><img src="DS logo.png" alt="DS Online Digital Studio logo"></span>
       <strong>Online Digital Studio</strong>
     </a>
 
     <nav class="site-nav" aria-label="Primary navigation">
       <a href="#services">Services</a>
       <a href="#pricing">Pricing</a>
+      <a href="#calculator">Calculator</a>
       <a href="#payment">Payment</a>
       <a href="#updates">Updates</a>
       <a href="#reviews">Reviews</a>
       <a href="#location">Location</a>
       <a href="#contact">Contact</a>
+      <a href="#admin">Admin</a>
     </nav>
   </header>
 
@@ -81,7 +83,7 @@
       <div class="badge">&#10022; Trusted Digital Services &#10022;</div>
 
       <div class="hero-logo">
-        <div class="logo-ds">DS</div>
+        <img class="hero-brand-logo" src="DS logo.png" alt="DS Online Digital Studio logo">
       </div>
 
       <h1>
@@ -108,6 +110,9 @@
         <a href="https://wa.me/919142153863" target="_blank" rel="noopener" class="btn-whatsapp">
           <span>&#128172;</span> WhatsApp Us
         </a>
+        <a href="#services" class="btn-services">
+          <span>&#9889;</span> View Services
+        </a>
       </div>
     </div>
   </div>
@@ -116,7 +121,7 @@
   <section class="bio-section">
     <div class="owner-profile fade-in">
       <div class="owner-avatar">
-        <img src="DS.jpg" alt="DHARMENDRA KUMAR SINGH" onerror="this.remove()">
+        <img src="DharmendarDeveloper.png" alt="DHARMENDRA KUMAR SINGH" onerror="this.remove()">
         <span>DK</span>
       </div>
 
@@ -200,7 +205,7 @@
       <span id="serviceSearchCount">All services available</span>
     </div>
 
-    <div class="services-grid">
+    <div class="services-sections">
       <div class="service-card fade-in">
         <div class="service-badge">Popular</div>
         <span class="service-icon">&#128179;</span>
@@ -263,6 +268,13 @@
         <span class="service-icon">&#128221;</span>
         <h3>Competition Exam Forms</h3>
         <p>SSC, Railway, Police, Banking, Army, and all exam form fill-up.</p>
+      </div>
+
+      <div class="service-card fade-in">
+        <div class="service-badge">Student Help</div>
+        <span class="service-icon">&#128218;</span>
+        <h3>Entrance Exam Form</h3>
+        <p>CUET, JEE, NEET, and other entrance exam application support.</p>
       </div>
 
       <div class="service-card fade-in">
@@ -345,31 +357,402 @@
         <h3>All Online Work</h3>
         <p>All government and private online digital services available here.</p>
       </div>
+
+      <div class="service-card fade-in">
+        <span class="service-icon">&#128274;</span>
+        <h3>DigiLocker Support</h3>
+        <p>Create an account, link documents, and download digital certificates.</p>
+      </div>
+
+      <div class="service-card fade-in">
+        <div class="service-badge">Popular</div>
+        <span class="service-icon">&#127973;</span>
+        <h3>Ayushman Card</h3>
+        <p>Ayushman Bharat card registration, download, and correction support.</p>
+      </div>
+
+      <div class="service-card fade-in">
+        <span class="service-icon">&#128196;</span>
+        <h3>e-Shram Card</h3>
+        <p>Online e-Shram registration, update, and card download service.</p>
+      </div>
+
+      <div class="service-card fade-in">
+        <span class="service-icon">&#127970;</span>
+        <h3>Udyam / MSME Registration</h3>
+        <p>Online small business and MSME registration assistance.</p>
+      </div>
+
+      <div class="service-card fade-in">
+        <span class="service-icon">&#127758;</span>
+        <h3>Passport Appointment</h3>
+        <p>Passport application form filling and appointment booking support.</p>
+      </div>
+
+      <div class="service-card fade-in">
+        <span class="service-icon">&#128663;</span>
+        <h3>Driving Licence Services</h3>
+        <p>Learner licence, driving licence, renewal, and slot booking support.</p>
+      </div>
+
+      <div class="service-card fade-in">
+        <span class="service-icon">&#128188;</span>
+        <h3>Job Application Services</h3>
+        <p>Online job registration, application forms, and document uploads.</p>
+      </div>
+
+      <div class="service-card fade-in">
+        <span class="service-icon">&#128176;</span>
+        <h3>ITR / GST Support</h3>
+        <p>Online income tax return and GST registration document support.</p>
+      </div>
+
+      <div class="service-card fade-in">
+        <div class="service-badge">Student Help</div>
+        <span class="service-icon">&#127891;</span>
+        <h3>College Admission Form</h3>
+        <p>Online college, university, and entrance admission form filling.</p>
+      </div>
+
+      <div class="service-card fade-in">
+        <span class="service-icon">&#128221;</span>
+        <h3>University Exam Form</h3>
+        <p>Semester, examination, enrollment, and registration form support.</p>
+      </div>
+
+      <div class="service-card fade-in">
+        <span class="service-icon">&#128196;</span>
+        <h3>Admit Card Download</h3>
+        <p>Download and print school, college, and competitive exam admit cards.</p>
+      </div>
+
+      <div class="service-card fade-in">
+        <span class="service-icon">&#127891;</span>
+        <h3>Result &amp; Marksheet Download</h3>
+        <p>Check results and download marksheets, certificates, and scorecards.</p>
+      </div>
+
+      <div class="service-card fade-in">
+        <div class="service-badge">Student Help</div>
+        <span class="service-icon">&#127942;</span>
+        <h3>Scholarship Renewal &amp; Correction</h3>
+        <p>Scholarship renewal, correction, verification, and status checking.</p>
+      </div>
+
+      <div class="service-card fade-in">
+        <span class="service-icon">&#128221;</span>
+        <h3>Assignment Typing</h3>
+        <p>School and college assignment typing, formatting, and printing.</p>
+      </div>
+
+      <div class="service-card fade-in">
+        <span class="service-icon">&#128218;</span>
+        <h3>Online Counselling Registration</h3>
+        <p>Course choice filling, counselling registration, and document upload.</p>
+      </div>
+
+      <div class="service-card fade-in">
+        <div class="service-badge">Student Help</div>
+        <span class="service-icon">&#128188;</span>
+        <h3>Internship &amp; Apprenticeship Form</h3>
+        <p>Find and apply for internship, apprenticeship, and skill training forms.</p>
+      </div>
     </div>
   </section>
+
+  <!-- ENTRANCE EXAM HELP
+  <section class="info-section entrance-section" id="entrance-exams">
+    <h2 class="section-title fade-in">Entrance Exam Help</h2>
+    <div class="section-divider fade-in"></div>
+    <p class="section-note fade-in">Form filling, photo resize, document upload, fee payment, and application print support.</p>
+
+    <div class="entrance-grid">
+      <article class="entrance-card cuet-card fade-in">
+        <span class="entrance-tag">UG Admissions</span>
+        <strong>CUET</strong>
+        <p>Central university entrance application support for students.</p>
+        <a href="https://cuet.nta.nic.in/" target="_blank" rel="noopener">Official Portal</a>
+      </article>
+      <article class="entrance-card jee-card fade-in">
+        <span class="entrance-tag">Engineering</span>
+        <strong>JEE</strong>
+        <p>JEE Main application, correction, documents, and print support.</p>
+        <a href="https://jeemain.nta.nic.in/" target="_blank" rel="noopener">Official Portal</a>
+      </article>
+      <article class="entrance-card neet-card fade-in">
+        <span class="entrance-tag">Medical</span>
+        <strong>NEET</strong>
+        <p>Medical entrance form filling and application document support.</p>
+        <a href="https://neet.nta.nic.in/" target="_blank" rel="noopener">Official Portal</a>
+      </article>
+    </div>
+  </section> -->
 
   <!-- PRICING -->
   <section class="info-section" id="pricing">
     <h2 class="section-title fade-in">Service Pricing</h2>
     <div class="section-divider fade-in"></div>
 
-    <div class="pricing-grid">
-      <div class="price-row fade-in">
-        <span>Aadhaar Download</span>
-        <strong>&#8377;50</strong>
+    <div class="pricing-table-wrap fade-in">
+      <table class="pricing-table">
+        <caption>Current service charges</caption>
+        <thead>
+          <tr>
+            <th scope="col">Service</th>
+            <th scope="col">Details</th>
+            <th scope="col">Starting Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Online Form Printing</th>
+            <td>Forms, admit cards, and certificates</td>
+            <td>&#8377;10 / page</td>
+          </tr>
+          <tr>
+            <th scope="row">Assignment Typing</th>
+            <td>Typing, formatting, and printing</td>
+            <td>&#8377;10 / page</td>
+          </tr>
+          <tr>
+            <th scope="row">Admit Card Download</th>
+            <td>Download and print support</td>
+            <td>&#8377;20</td>
+          </tr>
+          <tr>
+            <th scope="row">Result &amp; Marksheet Download</th>
+            <td>Results, marksheets, and scorecards</td>
+            <td>&#8377;20</td>
+          </tr>
+          <tr>
+            <th scope="row">Photo &amp; Signature Resize</th>
+            <td>Exam and application image resizing</td>
+            <td>&#8377;30</td>
+          </tr>
+          <tr>
+            <th scope="row">Aadhar Card Download</th>
+            <td>Download and print support</td>
+            <td>&#8377;50</td>
+          </tr>
+          <tr>
+            <th scope="row">APAAR ID / ABC ID</th>
+            <td>Apply and download support</td>
+            <td>&#8377;50</td>
+          </tr>
+          <tr>
+            <th scope="row">PVC Card Order</th>
+            <td>Aadhaar, PAN, and voter PVC cards</td>
+            <td>&#8377;50</td>
+          </tr>
+          <tr>
+            <th scope="row">DigiLocker Support</th>
+            <td>Account, document linking, and download</td>
+            <td>&#8377;50</td>
+          </tr>
+          <tr>
+            <th scope="row">Job Application Services</th>
+            <td>Job registration, forms, and uploads</td>
+            <td>&#8377;50</td>
+          </tr>
+          <tr>
+            <th scope="row">Internship &amp; Apprenticeship Form</th>
+            <td>Registration, application, and document upload</td>
+            <td>&#8377;50</td>
+          </tr>
+          <tr>
+            <th scope="row">Ayushman Card</th>
+            <td>Registration, download, and correction</td>
+            <td>&#8377;50</td>
+          </tr>
+          <tr>
+            <th scope="row">e-Shram Card</th>
+            <td>Registration, update, and download</td>
+            <td>&#8377;50</td>
+          </tr>
+          
+          <tr>
+            <th scope="row">Birth Certificate</th>
+            <td>Online apply and download support</td>
+            <td>&#8377;50</td>
+          </tr>
+          <tr>
+            <th scope="row">Residence Certificate</th>
+            <td>Residential and domicile certificate</td>
+            <td>&#8377;50</td>
+          </tr>
+          <tr>
+            <th scope="row">Income Certificate</th>
+            <td>New application and correction</td>
+            <td>&#8377;50</td>
+          </tr>
+          <tr>
+            <th scope="row">Caste Certificate</th>
+            <td>SC, ST, and OBC certificate support</td>
+            <td>&#8377;50</td>
+          </tr>
+          <tr>
+            <th scope="row">Resume / CV Making</th>
+            <td>Professional resume design</td>
+            <td>&#8377;100</td>
+          </tr>
+          <tr>
+            <th scope="row">College Admission Form</th>
+            <td>College, university, and entrance admission</td>
+            <td>&#8377;100</td>
+          </tr>
+          <tr>
+            <th scope="row">University Exam Form</th>
+            <td>Semester, exam, enrollment, and registration</td>
+            <td>&#8377;100</td>
+          </tr>
+          
+          <tr>
+            <th scope="row">Scholarship Renewal &amp; Correction</th>
+            <td>Renewal, correction, verification, and status</td>
+            <td>&#8377;100</td>
+          </tr>
+          
+          <tr>
+            <th scope="row">Online Counselling Registration</th>
+            <td>Choice filling and document upload</td>
+            <td>&#8377;100</td>
+          </tr>
+          
+          <tr>
+            <th scope="row">Voter ID Card</th>
+            <td>Registration, correction, and download</td>
+            <td>&#8377;100</td>
+          </tr>
+          
+          <tr>
+            <th scope="row">Scholarship Apply</th>
+            <td>State and central scholarship forms</td>
+            <td>&#8377;100</td>
+          </tr>
+          <tr>
+            <th scope="row">Competition Exam Forms</th>
+            <td>SSC, Railway, Police, Banking, and Army</td>
+            <td>&#8377;100</td>
+          </tr>
+          <tr>
+            <th scope="row">Entrance Exam Form</th>
+            <td>CUET, JEE, NEET, and other entrance exams</td>
+            <td>&#8377;100</td>
+          </tr>
+          <tr>
+            <th scope="row">Project Report Making</th>
+            <td>School and college project typing</td>
+            <td>&#8377;100</td>
+          </tr>
+          <tr>
+            <th scope="row">YouTube Thumbnail Design</th>
+            <td>Creative thumbnail design</td>
+            <td>&#8377;100</td>
+          </tr>
+          
+          <tr>
+            <th scope="row">PAN Card Service</th>
+            <td>New application, correction, and e-PAN</td>
+            <td>&#8377;150</td>
+          </tr>
+          <tr>
+            <th scope="row">Railway Ticket Booking</th>
+            <td>Train and Tatkal booking support</td>
+            <td>Contact Us</td>
+          </tr>
+          <tr>
+            <th scope="row">Flight Ticket Booking</th>
+            <td>Domestic and international booking</td>
+            <td>Contact Us</td>
+          </tr>
+          <tr>
+            <th scope="row">Mobile Recharge</th>
+            <td>Mobile, DTH, broadband, and FASTag</td>
+            <td>Contact Us</td>
+          </tr>
+          <tr>
+            <th scope="row">Electricity Bill Payment</th>
+            <td>Online bill payment support</td>
+            <td>Contact Us</td>
+          </tr>
+          
+          <tr>
+            <th scope="row">Website Development</th>
+            <td>Responsive business website</td>
+            <td>Contact Us</td>
+          </tr>
+          <tr>
+            <th scope="row">Cyber Cafe Services</th>
+            <td>Printing, scanning, photocopy, and typing</td>
+            <td>Contact Us</td>
+          </tr>
+          <tr>
+            <th scope="row">All Online Work</th>
+            <td>Government and private online services</td>
+            <td>Contact Us</td>
+          </tr>
+          
+          <tr>
+            <th scope="row">Udyam / MSME Registration</th>
+            <td>Small business registration assistance</td>
+            <td>Contact Us</td>
+          </tr>
+          <tr>
+            <th scope="row">Passport Appointment</th>
+            <td>Application form and appointment booking</td>
+            <td>Contact Us</td>
+          </tr>
+          <tr>
+            <th scope="row">Driving Licence Services</th>
+            <td>Learner licence, renewal, and slot booking</td>
+            <td>Contact Us</td>
+          </tr>
+          <tr>
+            <th scope="row">ITR / GST Support</th>
+            <td>Online return and registration document support</td>
+            <td>Contact Us</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+    <p class="pricing-note">Final charges may vary depending on the service, documents, and government fees.</p>
+  </section>
+
+  <!-- PRINTING CALCULATOR -->
+  <section class="info-section" id="calculator">
+    <h2 class="section-title fade-in">Print &amp; Copy Calculator</h2>
+    <div class="section-divider fade-in"></div>
+    <div class="calculator-box fade-in">
+      <div class="calculator-fields">
+        <label>Print pages <input type="number" id="printPages" min="0" value="0"></label>
+        <label>Scan pages <input type="number" id="scanPages" min="0" value="0"></label>
+        <label>Photocopy pages <input type="number" id="copyPages" min="0" value="0"></label>
       </div>
-      <div class="price-row fade-in">
-        <span>PAN Card Apply</span>
-        <strong>&#8377;150</strong>
+      <div class="calculator-result">
+        <span>Estimated total</span>
+        <strong id="calculatorTotal">&#8377;0</strong>
+        <small>Print &#8377;10/page, Scan &#8377;5/page, Photocopy &#8377;2/page</small>
       </div>
-      <div class="price-row fade-in">
-        <span>Resume Making</span>
-        <strong>&#8377;.......</strong>
+    </div>
+  </section>
+
+  <!-- ADMIN PANEL -->
+  <section class="info-section admin-section" id="admin">
+    <h2 class="section-title fade-in">Admin Panel</h2>
+    <div class="section-divider fade-in"></div>
+    <div class="admin-box fade-in">
+      <p class="section-note">Update notices and service charges for this browser.</p>
+      <div class="admin-fields">
+        <label>Notice <input type="text" id="adminNotice" placeholder="New notice for customers"></label>
+        <label>Service <select id="adminService"></select></label>
+        <label>Price <input type="text" id="adminPrice" placeholder="Example: ₹100"></label>
       </div>
-      <div class="price-row fade-in">
-        <span>Website Development</span>
-        <strong>Contact Us</strong>
+      <div class="admin-actions">
+        <button type="button" id="saveAdminChanges">Save Changes</button>
+        <button type="button" id="resetAdminChanges">Reset Local Changes</button>
       </div>
+      <p class="admin-message" id="adminMessage" role="status"></p>
     </div>
   </section>
 
@@ -684,6 +1067,11 @@
       <p class="contact-label">&#128205; Get In Touch</p>
       <h2>Contact DS Online Digital Studio</h2>
       <div class="open-status" id="openStatus">Checking today status...</div>
+      <div class="emergency-contact">
+        <strong>Emergency Support</strong>
+        <a href="tel:9142153863">Call 9142153863</a>
+        <span>Urgent document or form help available.</span>
+      </div>
       <div class="opening-days">
         <strong>Open Monday to Sunday</strong>
         <span>Holiday or urgent closure notice will be shared on WhatsApp.</span>
@@ -714,8 +1102,10 @@
           <option>Aadhaar Download</option>
           <option>PAN Card Apply</option>
           <option>Scholarship Apply</option>
+          <option>Entrance Exam Form</option>
           <option>Resume Making</option>
           <option>Website Development</option>
+          <option>Internship &amp; Apprenticeship Form</option>
           <option>Other Online Work</option>
         </select>
         <button type="submit">Submit on WhatsApp</button>
