@@ -169,6 +169,21 @@ The website includes a basic browser-based admin section for managing:
 
 > The current admin functionality is designed for browser/local management. A production-grade authentication and database system can be added in future versions.
 
+### Customer Feedback
+
+Customers can submit a name, 1-5 star rating, and comment. Without a database URL, feedback is saved only in the submitting browser and is not shared with other devices.
+
+To enable shared, live feedback with Firebase Realtime Database, set `window.DS_FEEDBACK_DATABASE_URL` in `index.html` before `script.js` is loaded:
+
+```html
+<script>
+  window.DS_FEEDBACK_DATABASE_URL = 'https://YOUR-DATABASE.REGION.firebasedatabase.app';
+</script>
+<script src="script.js"></script>
+```
+
+Create the database and configure its access rules for customer submissions and review reads before deploying. The current dashboard has no sign-in and submitted names/comments are also shown in public customer reviews; do not put sensitive information in feedback. A private staff dashboard needs authenticated access enforced by a backend, not a hidden link or browser-only check. Public database writes can attract spam, so use server-side validation/rate limits or a trusted submission endpoint for production.
+
 ---
 
 ## 📄 Documents Required
